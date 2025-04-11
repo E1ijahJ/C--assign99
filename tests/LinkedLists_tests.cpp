@@ -172,4 +172,13 @@ TEST(SLLTest, UpdateElementSuccessfully) {
     EXPECT_TRUE(list.update_element(20, 25));
     EXPECT_EQ(list.get(1), 25);
 }
+TEST(SLLTest, UpdateElementAtIndexSuccessfully) {
+    SLL list;
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+
+    EXPECT_TRUE(list.update_element_at_index(1, 20));  // Should update index 1 from 2 to 20
+    EXPECT_EQ(list.get(1), 20);
+}
 
