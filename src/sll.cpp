@@ -120,3 +120,13 @@ bool SLL::update_element(int old_data, int new_data) {
     }
     return false;
 }
+bool SLL::update_element_at_index(int index, int value) {
+    if (index < 0 || index >= size) return false;
+
+    int current = head;
+    for (int i = 0; i < index; ++i)
+        current = next[current];
+
+    data[current] = value;
+    return true;
+}
