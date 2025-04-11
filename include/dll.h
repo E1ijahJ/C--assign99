@@ -1,6 +1,21 @@
 #ifndef DLL_H
 #define DLL_H
 
-int add(int a, int b);  
+struct Node {
+    int data;
+    Node* next;
+};
 
-#endif 
+class DynamicLinkedList {
+public:
+    DynamicLinkedList();
+    ~DynamicLinkedList();
+
+    void insert(int data);
+    int get(int index) const;
+
+private:
+    Node* head;
+};
+
+#endif
