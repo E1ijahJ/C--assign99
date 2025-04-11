@@ -39,3 +39,25 @@ int SLL::get(int index)  {
         current = next[current];
     return data[current];
 }
+
+void SLL::insert_at_index(int index, int value) {
+    if (index < 0 || index > size || freeIndex == -1) return;
+
+    int newNode = freeIndex;
+    freeIndex = next[freeIndex];
+    data[newNode] = value;
+
+    if (index == 0) {
+        next[newNode] = head;
+        head = newNode;
+    } else {
+        int current = head;
+        for (int i = 0; i < index - 1; ++i)
+            current = next[current];
+
+        next[newNode] = next[current];
+        next[current] = newNode;
+    }
+
+    size++;
+}
