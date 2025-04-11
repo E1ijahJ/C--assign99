@@ -58,3 +58,14 @@ TEST(DLLTest, UpdateElementWorks) {
 
     EXPECT_FALSE(list.update_element(100, 200)); // Non-existent value
 }
+TEST(DLLTest, UpdateElementAtIndexWorks) {
+    DynamicLinkedList list;
+    list.insert(10);
+    list.insert(20);
+    list.insert(30);
+
+    EXPECT_TRUE(list.update_element_at_index(1, 99));
+    EXPECT_EQ(list.get(1), 99);
+
+    EXPECT_FALSE(list.update_element_at_index(5, 42)); // Out of bounds
+}
