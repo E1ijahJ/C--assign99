@@ -61,3 +61,28 @@ void SLL::insert_at_index(int index, int value) {
 
     size++;
 }
+bool SLL::delete_element(int value) {
+    if (head == -1) return false;
+
+    int current = head;
+    int prev = -1;
+
+    while (current != -1 && data[current] != value) {
+        prev = current;
+        current = next[current];
+    }
+
+    if (current == -1) return false; // value not found
+
+    if (prev == -1) {
+        head = next[current];
+    } else {
+        next[prev] = next[current];
+    }
+
+    next[current] = freeIndex;
+    freeIndex = current;
+    size--;
+
+    return true;
+}
