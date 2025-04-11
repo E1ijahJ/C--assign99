@@ -66,3 +66,26 @@ void DynamicLinkedList::insert_at_index(int index, int data) {
     newNode->next = current->next;
     current->next = newNode;
 }
+bool DynamicLinkedList::delete_element(int data) {
+    if (!head) return false;
+
+    // Handle if head needs to be removed
+    if (head->data == data) {
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+        return true;
+    }
+
+    Node* current = head;
+    while (current->next && current->next->data != data) {
+        current = current->next;
+    }
+
+    if (!current->next) return false; // Not found
+
+    Node* toDelete = current->next;
+    current->next = current->next->next;
+    delete toDelete;
+    return true;
+}
