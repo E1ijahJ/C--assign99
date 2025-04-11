@@ -89,3 +89,26 @@ bool DynamicLinkedList::delete_element(int data) {
     delete toDelete;
     return true;
 }
+
+bool DynamicLinkedList::delete_at_index(int index) {
+    if (index < 0 || !head) return false;
+
+    if (index == 0) {
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+        return true;
+    }
+
+    Node* current = head;
+    for (int i = 0; i < index - 1 && current->next; ++i) {
+        current = current->next;
+    }
+
+    if (!current->next) return false;
+
+    Node* toDelete = current->next;
+    current->next = toDelete->next;
+    delete toDelete;
+    return true;
+}
