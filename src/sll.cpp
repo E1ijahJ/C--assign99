@@ -30,7 +30,7 @@ void SLL::insert(int value) {
     size++;
 }
 
-int SLL::get(int index) const {
+int SLL::get(int index)  {
     if (index < 0 || index >= size)
         return -1;
 
