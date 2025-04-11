@@ -109,3 +109,14 @@ bool SLL::delete_at_index(int index) {
 
     return true;
 }
+bool SLL::update_element(int old_data, int new_data) {
+    int current = head;
+    while (current != -1) {
+        if (data[current] == old_data) {
+            data[current] = new_data;
+            return true;
+        }
+        current = next[current];
+    }
+    return false;
+}
