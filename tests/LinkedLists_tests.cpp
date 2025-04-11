@@ -2,7 +2,7 @@
 #include "dll.h"
 
 TEST(DLLTest, InsertAtTailWorks) {
-    DLL list;
+    DynamicLinkedList list;
     list.insert(10);
     list.insert(20);
     list.insert(30);
