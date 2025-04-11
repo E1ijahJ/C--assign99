@@ -112,3 +112,14 @@ bool DynamicLinkedList::delete_at_index(int index) {
     delete toDelete;
     return true;
 }
+bool DynamicLinkedList::update_element(int old_data, int new_data) {
+    Node* current = head;
+    while (current) {
+        if (current->data == old_data) {
+            current->data = new_data;
+            return true;
+        }
+        current = current->next;
+    }
+    return false;
+}
