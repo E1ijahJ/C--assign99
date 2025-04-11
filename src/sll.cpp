@@ -130,3 +130,15 @@ bool SLL::update_element_at_index(int index, int value) {
     data[current] = value;
     return true;
 }
+
+bool SLL::find(int value) {
+    int current = head;
+
+    while (current != -1) {
+        if (data[current] == value)
+            return true;
+        current = next[current];
+    }
+
+    return false;
+}
