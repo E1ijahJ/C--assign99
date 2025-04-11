@@ -101,3 +101,23 @@ TEST(SLLTest, InsertAddsElementsCorrectly) {
     EXPECT_EQ(list.get(1), 10);
     EXPECT_EQ(list.get(2), 15);
 }
+
+
+TEST(SLLTest, GetReturnsCorrectValue) {
+    SLL list;
+    list.insert(10);
+    list.insert(20);
+    list.insert(30);
+
+    EXPECT_EQ(list.get(0), 10);
+    EXPECT_EQ(list.get(1), 20);
+    EXPECT_EQ(list.get(2), 30);
+}
+
+TEST(SLLTest, GetOutOfBoundsReturnsMinusOne) {
+    SLL list;
+    list.insert(100);
+
+    EXPECT_EQ(list.get(-1), -1); 
+    EXPECT_EQ(list.get(1), -1);  
+}
