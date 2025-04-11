@@ -40,3 +40,29 @@ int DynamicLinkedList::get(int index) const {
 
     throw std::out_of_range("Index out of bounds");
 }
+void DynamicLinkedList::insert_at_index(int index, int data) {
+    if (index < 0) return;
+
+    Node* newNode = new Node{data, nullptr};
+
+    if (index == 0) {
+        newNode->next = head;
+        head = newNode;
+        return;
+    }
+
+    Node* current = head;
+    int i = 0;
+    while (current != nullptr && i < index - 1) {
+        current = current->next;
+        i++;
+    }
+
+    if (current == nullptr) {
+        delete newNode;  // index is out of bounds
+        return;
+    }
+
+    newNode->next = current->next;
+    current->next = newNode;
+}
