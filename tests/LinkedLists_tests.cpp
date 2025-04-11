@@ -78,3 +78,13 @@ TEST(DLLTest, FindElementWorks) {
     EXPECT_TRUE(list.find(15));
     EXPECT_FALSE(list.find(100));
 }
+TEST(DLLTest, GetElementAtIndexWorks) {
+    DynamicLinkedList list;
+    list.insert(5);
+    list.insert(15);
+    list.insert(25);
+
+    EXPECT_EQ(list.get(0), 5);
+    EXPECT_EQ(list.get(2), 25);
+    EXPECT_THROW(list.get(5), std::out_of_range);
+}
