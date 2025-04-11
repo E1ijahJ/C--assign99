@@ -140,3 +140,12 @@ bool DynamicLinkedList::update_element_at_index(int index, int data) {
 
     return false; // Index out of bounds
 }
+bool DynamicLinkedList::find(int data) {
+    Node* current = head;
+    while (current) {
+        if (current->data == data)
+            return true;
+        current = current->next;
+    }
+    return false;
+}
