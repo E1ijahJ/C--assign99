@@ -69,3 +69,12 @@ TEST(DLLTest, UpdateElementAtIndexWorks) {
 
     EXPECT_FALSE(list.update_element_at_index(5, 42)); // Out of bounds
 }
+TEST(DLLTest, FindElementWorks) {
+    DynamicLinkedList list;
+    list.insert(5);
+    list.insert(15);
+    list.insert(25);
+
+    EXPECT_TRUE(list.find(15));
+    EXPECT_FALSE(list.find(100));
+}
