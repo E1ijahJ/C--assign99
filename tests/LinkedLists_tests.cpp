@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "dll.h"
+#include "sll.h"
 
 TEST(DLLTest, InsertAtTailWorks) {
     DynamicLinkedList list;
@@ -87,4 +88,16 @@ TEST(DLLTest, GetElementAtIndexWorks) {
     EXPECT_EQ(list.get(0), 5);
     EXPECT_EQ(list.get(2), 25);
     EXPECT_THROW(list.get(5), std::out_of_range);
+}
+
+TEST(SLLTest, InsertAddsElementsCorrectly) {
+    SLL list;
+
+    list.insert(5);
+    list.insert(10);
+    list.insert(15);
+
+    EXPECT_EQ(list.get(0), 5);
+    EXPECT_EQ(list.get(1), 10);
+    EXPECT_EQ(list.get(2), 15);
 }
