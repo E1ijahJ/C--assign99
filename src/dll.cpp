@@ -149,3 +149,15 @@ bool DynamicLinkedList::find(int data) {
     }
     return false;
 }
+int DynamicLinkedList::get(int index) {
+    if (index < 0) return -1; 
+    Node* current = head;
+    int count = 0;
+    while (current) {
+        if (count == index)
+            return current->data;
+        current = current->next;
+        count++;
+    }
+    throw std::out_of_range("Index out of bounds");
+}
