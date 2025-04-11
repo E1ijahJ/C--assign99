@@ -163,4 +163,13 @@ TEST(SLLTest, DeleteAtIndexRemovesCorrectElement) {
     EXPECT_EQ(list.get(1), 30);
     EXPECT_EQ(list.get(2), -1);  
 }
+TEST(SLLTest, UpdateElementSuccessfully) {
+    SLL list;
+    list.insert(10);
+    list.insert(20);
+    list.insert(30);
+    
+    EXPECT_TRUE(list.update_element(20, 25));
+    EXPECT_EQ(list.get(1), 25);
+}
 
