@@ -18,6 +18,7 @@ bool delete_element(int data);
 bool delete_at_index(int index);
 bool update_element(int old_data, int new_data);
 bool update_element_at_index(int index, int data);
+bool find(int data);
 private:
     Node* head;
 };
