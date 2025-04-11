@@ -47,3 +47,14 @@ TEST(DLLTest, DeleteAtIndexWorks) {
     EXPECT_EQ(list.get(0), 10);
     EXPECT_EQ(list.get(1), 30);
 }
+TEST(DLLTest, UpdateElementWorks) {
+    DynamicLinkedList list;
+    list.insert(10);
+    list.insert(20);
+    list.insert(30);
+
+    EXPECT_TRUE(list.update_element(20, 25)); // Should update
+    EXPECT_EQ(list.get(1), 25);
+
+    EXPECT_FALSE(list.update_element(100, 200)); // Non-existent value
+}
