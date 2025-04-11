@@ -17,6 +17,7 @@ add_library(dll STATIC src/dll.cpp)
 
 # Add library for static linked list
 add_library(sll STATIC src/sll.cpp)
+target_include_directories(sll PUBLIC include)
 
 # Add the tests directory
 add_subdirectory(tests)
