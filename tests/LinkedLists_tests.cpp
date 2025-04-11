@@ -181,4 +181,11 @@ TEST(SLLTest, UpdateElementAtIndexSuccessfully) {
     EXPECT_TRUE(list.update_element_at_index(1, 20));  // Should update index 1 from 2 to 20
     EXPECT_EQ(list.get(1), 20);
 }
+TEST(SLLTest, FindReturnsTrueIfExists) {
+    SLL list;
+    list.insert(10);
+    list.insert(20);
+    list.insert(30);
 
+    EXPECT_TRUE(list.find(20));
+}
