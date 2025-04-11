@@ -121,3 +121,22 @@ TEST(SLLTest, GetOutOfBoundsReturnsMinusOne) {
     EXPECT_EQ(list.get(-1), -1); 
     EXPECT_EQ(list.get(1), -1);  
 }
+
+TEST(SLLTest, InsertAtIndexWorks) {
+    SLL list;
+    list.insert(1);
+    list.insert(3);
+    list.insert_at_index(1, 2); 
+
+    EXPECT_EQ(list.get(0), 1);
+    EXPECT_EQ(list.get(1), 2);
+    EXPECT_EQ(list.get(2), 3);
+}
+
+TEST(SLLTest, InsertAtInvalidIndexDoesNothing) {
+    SLL list;
+    list.insert(10);
+    list.insert_at_index(5, 20);
+
+    EXPECT_EQ(list.get(1), -1); 
+}
