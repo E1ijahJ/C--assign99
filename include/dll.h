@@ -15,6 +15,7 @@ public:
     int get(int index) const;
 void insert_at_index(int index, int data);
 bool delete_element(int data);
+bool delete_at_index(int index);
 private:
     Node* head;
 };
