@@ -9,7 +9,11 @@ SLL::SLL() {
     freeIndex = 0;
     size = 0;
 }
-
+/**
+ * Inserts a value at the end (tail) of the linked list.
+ * 
+ * @param value The integer value to insert.
+ */
 void SLL::insert(int value) {
     if (freeIndex == -1) return;
 
@@ -29,7 +33,12 @@ void SLL::insert(int value) {
 
     size++;
 }
-
+/**
+ * Retrieves the value at a given index in the list.
+ * 
+ * @param index The position to retrieve the value from.
+ * @return The value at the index, or -1 if the index is out of bounds.
+ */
 int SLL::get(int index)  {
     if (index < 0 || index >= size)
         return -1;
@@ -39,7 +48,12 @@ int SLL::get(int index)  {
         current = next[current];
     return data[current];
 }
-
+/**
+ * Inserts a value at the specified index.
+ * 
+ * @param index The position to insert the value at.
+ * @param value The value to insert.
+ */
 void SLL::insert_at_index(int index, int value) {
     if (index < 0 || index > size || freeIndex == -1) return;
 
@@ -61,6 +75,12 @@ void SLL::insert_at_index(int index, int value) {
 
     size++;
 }
+/**
+ * Deletes the first occurrence of a value in the list.
+ * 
+ * @param value The value to delete.
+ * @return true if the value was found and deleted, false otherwise.
+ */
 bool SLL::delete_element(int value) {
     if (head == -1) return false;
 
@@ -86,6 +106,12 @@ bool SLL::delete_element(int value) {
 
     return true;
 }
+/**
+ * Deletes the node at the specified index.
+ * 
+ * @param index The index of the node to delete.
+ * @return true if deletion succeeded, false if the index is out of bounds.
+ */
 bool SLL::delete_at_index(int index) {
     if (index < 0 || index >= size) return false;
 
@@ -109,6 +135,13 @@ bool SLL::delete_at_index(int index) {
 
     return true;
 }
+/**
+ * Updates the first node matching the old data value to a new value.
+ * 
+ * @param old_data The existing value to find and update.
+ * @param new_data The new value to assign.
+ * @return true if an update occurred, false if the value wasn't found.
+ */
 bool SLL::update_element(int old_data, int new_data) {
     int current = head;
     while (current != -1) {
@@ -120,6 +153,13 @@ bool SLL::update_element(int old_data, int new_data) {
     }
     return false;
 }
+/**
+ * Updates the value at the specified index.
+ * 
+ * @param index The position to update.
+ * @param value The new value to assign.
+ * @return true if successful, false if the index is out of bounds.
+ */
 bool SLL::update_element_at_index(int index, int value) {
     if (index < 0 || index >= size) return false;
 
@@ -130,7 +170,12 @@ bool SLL::update_element_at_index(int index, int value) {
     data[current] = value;
     return true;
 }
-
+/**
+ * Checks if a value exists in the list.
+ * 
+ * @param value The value to search for.
+ * @return true if found, false otherwise.
+ */
 bool SLL::find(int value) {
     int current = head;
 
