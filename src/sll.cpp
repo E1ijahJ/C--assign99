@@ -1,4 +1,4 @@
-#include "sll.h"
+#include "../include/sll.h"
 
 SLL::SLL() {
     for (int i = 0; i < MAX_SIZE - 1; ++i)
