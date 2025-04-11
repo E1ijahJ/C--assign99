@@ -86,3 +86,26 @@ bool SLL::delete_element(int value) {
 
     return true;
 }
+bool SLL::delete_at_index(int index) {
+    if (index < 0 || index >= size) return false;
+
+    int current = head;
+    int previous = -1;
+
+    for (int i = 0; i < index; ++i) {
+        previous = current;
+        current = next[current];
+    }
+
+    if (previous == -1) {
+        head = next[current];  // deleting head
+    } else {
+        next[previous] = next[current];
+    }
+
+    next[current] = freeIndex;
+    freeIndex = current;
+    size--;
+
+    return true;
+}
