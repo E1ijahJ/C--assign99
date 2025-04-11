@@ -123,3 +123,20 @@ bool DynamicLinkedList::update_element(int old_data, int new_data) {
     }
     return false;
 }
+bool DynamicLinkedList::update_element_at_index(int index, int data) {
+    if (index < 0) return false;
+
+    Node* current = head;
+    int currentIndex = 0;
+
+    while (current) {
+        if (currentIndex == index) {
+            current->data = data;
+            return true;
+        }
+        current = current->next;
+        currentIndex++;
+    }
+
+    return false; // Index out of bounds
+}
