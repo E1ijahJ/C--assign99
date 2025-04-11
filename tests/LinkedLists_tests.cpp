@@ -140,3 +140,15 @@ TEST(SLLTest, InsertAtInvalidIndexDoesNothing) {
 
     EXPECT_EQ(list.get(1), -1); 
 }
+TEST(SLLTest, DeleteElementRemovesCorrectNode) {
+    SLL list;
+    list.insert(5);
+    list.insert(10);
+    list.insert(15);
+
+    EXPECT_TRUE(list.delete_element(10));  
+    EXPECT_EQ(list.get(0), 5);
+    EXPECT_EQ(list.get(1), 15);
+    EXPECT_EQ(list.get(2), -1); 
+}
+
