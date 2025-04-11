@@ -1,0 +1,3 @@
+add_executable(LinkedLists_test LinkedLists_tests.cpp)
+target_link_libraries(LinkedLists_test gtest gtest_main dll sll)
+gtest_discover_tests(LinkedLists_test)

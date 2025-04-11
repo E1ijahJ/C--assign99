@@ -1,0 +1,36 @@
+# VSCode settings
+.vscode/
+*.code-workspace
+
+# macOS system files
+.DS_Store
+
+# Build folders
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Binaries and libraries
+*.exe
+*.out
+*.a
+*.so
+*.dylib
+*.lib
+*.dll
+*.obj
+*.o
+
+# CTest & GoogleTest artifacts
+Testing/
+CTestTestfile.cmake
+DartConfiguration.tcl
+
+# External dependencies
+external/
+
+# Logs and misc
+*.log
+*.tmp
